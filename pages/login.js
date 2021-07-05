@@ -26,7 +26,6 @@ const Login = () => {
           alert(data.errors[0])
         } else {
           const token = data.user.token
-          console.log(token)
           setToken(token)
           router.push('/')
         }
@@ -40,10 +39,10 @@ const Login = () => {
 
   return (
     <div className="flex flex-row h-screen items-center justify-center">
-      <div className="border-solid border border-black p-10 py-5 h-55 rounded">
+      <div className="border-solid border border-black p-10 py-5 h-55 rounded shadow-md">
         <form className="space-y-4" onSubmit={onSubmit}>
           <div>
-            <label htmlFor="email">
+            <label htmlFor="email" className="font-bold">
               Email
             </label>
             <div>
@@ -55,7 +54,7 @@ const Login = () => {
           </div>
 
           <div>
-            <label htmlFor="password">
+            <label htmlFor="password" className="font-bold">
               Password
             </label>
             <div>
@@ -66,7 +65,7 @@ const Login = () => {
             </div>
           </div>
 
-          <button className="w-full p-1 bg-gray-200 rounded-lg shadow-md">
+          <button className="w-full p-1 bg-gray-200 rounded-lg">
             Login
           </button>
         </form>

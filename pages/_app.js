@@ -8,7 +8,7 @@ const MyApp = ({ Component, pageProps }) => {
 
   useEffect(
     () => {
-      if (!getToken()) {
+      if (router.pathname !== '/login' && !getToken()) {
         router.push('/login')
       }
     },

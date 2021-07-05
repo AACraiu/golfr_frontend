@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import ScorePostWidget from '../components/ScorePostWidget'
 import Score from '../components/Score'
 import useScores from '../lib/useScores'
 
@@ -11,14 +12,17 @@ const Home = () => {
         {error ? (
           error
         ) : (
-          scores && scores.map(score => (
-            <Score
-              key={score.id}
-              totalScore={score.total_score}
-              playedAt={score.played_at}
-              userName={score.user_name}
-            />
-          ))
+          <>
+            <ScorePostWidget />
+            {scores && scores.map(score => (
+              <Score
+                key={score.id}
+                totalScore={score.total_score}
+                playedAt={score.played_at}
+                userName={score.user_name}
+              />
+            ))}
+          </>
         )}
       </>
     </Layout>

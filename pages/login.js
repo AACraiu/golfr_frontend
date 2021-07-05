@@ -1,5 +1,4 @@
 import { useState, useCallback } from 'react'
-import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { setToken } from '../lib/userAuth'
 
@@ -7,16 +6,6 @@ const Login = () => {
   const router = useRouter()
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
-
-  // const { data, error } = useSWR([
-  //   `${process.env.NEXT_PUBLIC_API_URL}/login`,
-  //   {
-  //     email,
-  //     password,
-  //   }
-  // ])
-  // // console.log(data)
-  // // console.log(error)
 
   const onSubmit = useCallback(
     async e => {

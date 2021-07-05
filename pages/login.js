@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { setToken } from '../lib/userAuth'
+import { setUserData } from '../lib/userAuth'
 
 const Login = () => {
   const router = useRouter()
@@ -25,8 +25,8 @@ const Login = () => {
         if (data.errors) {
           alert(data.errors[0])
         } else {
-          const token = data.user.token
-          setToken(token)
+          const userData = data.user
+          setUserData(userData)
           router.push('/')
         }
       })

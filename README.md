@@ -13,7 +13,8 @@ This is the code for the Golfr app frontend.
     NEXT_PUBLIC_API_URL=http://localhost:3000/api
     NEXT_PUBLIC_BASE_URL=http://localhost:3001
     ```
-6. `yarn dev`
+6. Start the frontend server `yarn dev -p 3001`
+7. Visit http://localhost:3001
 
 ## Development
 

@@ -49,6 +49,7 @@ const Login = () => {
               <input type="text" id="email" name="email" className="h-8"
                      value={email}
                      onChange={e => setEmail(e.target.value)}
+                     autoComplete="username"
               />
             </div>
           </div>
@@ -61,6 +62,7 @@ const Login = () => {
               <input type="password" id="password" name="password" className="h-8"
                      value={password}
                      onChange={e => setPassword(e.target.value)}
+                     autoComplete="password"
               />
             </div>
           </div>

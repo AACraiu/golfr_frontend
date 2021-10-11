@@ -17,11 +17,11 @@ This is the code for the Golfr app frontend.
 7. Visit http://localhost:3001
 
 ## Development
-
+<!-- 
 #### Running unit tests
 
 `yarn test`
-
+ -->
 #### Running eslint
 
 `yarn lint`

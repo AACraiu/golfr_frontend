@@ -18,21 +18,20 @@ const Login = () => {
         body: JSON.stringify({
           email,
           password,
+        }),
+      }).then(res => res.json())
+        .then(data => {
+          if (data.errors) {
+            alert(data.errors[0])
+          } else {
+            const userData = data.user
+            setUserData(userData)
+            router.push('/')
+          }
         })
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (data.errors) {
-          alert(data.errors[0])
-        } else {
-          const userData = data.user
-          setUserData(userData)
-          router.push('/')
-        }
-      })
-      .catch(e => {
-        alert(e)
-      })
+        .catch(e => {
+          alert(e)
+        })
     },
     [ email, password, router ]
   )
@@ -46,10 +45,11 @@ const Login = () => {
               Email
             </label>
             <div>
-              <input type="text" id="email" name="email" className="h-8"
-                     value={email}
-                     onChange={e => setEmail(e.target.value)}
-                     autoComplete="username"
+              <input
+                type="text" id="email" name="email" className="h-8"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                autoComplete="username"
               />
             </div>
           </div>
@@ -59,10 +59,11 @@ const Login = () => {
               Password
             </label>
             <div>
-              <input type="password" id="password" name="password" className="h-8"
-                     value={password}
-                     onChange={e => setPassword(e.target.value)}
-                     autoComplete="password"
+              <input
+                type="password" id="password" name="password" className="h-8"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                autoComplete="password"
               />
             </div>
           </div>

@@ -1,3 +1,166 @@
 {
-  "extends": ["next", "next/core-web-vitals"]
+  "extends": [
+    "next",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "newline-per-chained-call": [
+      "error",
+      {
+        "ignoreChainWithDepth": 3
+      }
+    ],
+    "linebreak-style": [
+        "error",
+        "unix"
+    ],
+    "quotes": [
+        "error",
+        "single",
+        {
+          "avoidEscape": true
+        }
+    ],
+    "semi": [
+        "error",
+        "never"
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [ "warn", "error" ]
+      }
+    ],
+    "prefer-spread": "error",
+    "eqeqeq": "error",
+    "no-extra-semi": "error",
+    "semi-spacing": "error",
+    "no-multi-spaces": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "prefer-arrow-callback": "error",
+    "array-bracket-spacing": [
+      "error",
+      "always",
+      {
+        "objectsInArrays": false
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "block-spacing": [
+      "error",
+      "always"
+    ],
+    "comma-spacing": "error",
+    "comma-style": [
+      "error",
+      "last",
+      {
+        "exceptions": {
+          "CallExpression": true
+        }
+      }
+    ],
+    "eol-last": "error",
+    "no-mixed-requires": "error",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
+    "key-spacing": "error",
+    "brace-style": [
+      "error",
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "arrow-spacing": "error",
+    "camelcase": [
+      "error",
+      {
+        "properties": "never"
+      }
+    ],
+    "curly": [
+      "error",
+      "all"
+    ],
+    "space-infix-ops": "error",
+    "keyword-spacing": "error",
+    "jsx-quotes": "error",
+    "react/jsx-no-target-blank": "off",
+    "jsx-a11y/no-redundant-roles": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "tabWidth": 2
+      }
+    ],
+    "max-lines-per-function": [
+      "error",
+      {
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
+    "complexity": "error",
+    "max-params": [
+      "error",
+      5
+    ],
+    "no-throw-literal": "error",
+    "no-useless-computed-key": "error",
+    "react/no-typos": "error",
+    "no-lone-blocks": "error",
+    "no-trailing-spaces": "error",
+    "react/jsx-curly-spacing": "error",
+    "arrow-parens": [
+      "error",
+      "as-needed"
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "default-case": "error",
+    "function-call-argument-newline": [ "error", "consistent" ],
+    "react/jsx-fragments": [ "error", "syntax" ],
+    "jsx-a11y/no-autofocus": "off"
+  },
+  "overrides": [
+    {
+      "files": [
+        "pages/**/*.js",
+        "components/**/*.js"
+      ],
+      "rules": {
+        "max-lines-per-function": [
+          "error",
+          {
+            "max": 70,
+            "skipBlankLines": true,
+            "skipComments": true
+          }
+        ]
+      }
+    }
+  ]
 }

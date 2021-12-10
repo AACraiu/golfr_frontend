@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import PropTypes from 'prop-types'
 import useScoreDelete from '../lib/useScoreDelete'
 import { getUserId } from '../lib/userAuth'
@@ -15,6 +17,17 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
         </div>
         <div>
           {`${userName} posted a score of ${totalScore}`}
+        </div>
+      </div>
+      <div className="w-1/8">
+        <div className="flex items-center justify-center h-full w-full">
+          <Link href={`/golfers/${userId}`} passHref={true}>
+            <span
+              className="cursor-pointer"
+            >
+              <i className="bi bi-file-ruled"></i>
+            </span>
+          </Link>
         </div>
       </div>
       <div className="w-1/6">

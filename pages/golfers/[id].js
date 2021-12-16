@@ -1,13 +1,16 @@
-import Layout from '../components/Layout'
-import ScorePostWidget from '../components/ScorePostWidget'
-import ScoreCard from '../components/ScoreCard'
-import useScores from '../lib/useScores'
+import Layout from "../../components/Layout";
+import ScorePostWidget from '../../components/ScorePostWidget'
+import ScoreCard from '../../components/ScoreCard'
+import useScoresOfGolfer from '../../lib/useScoresOfGolfer'
+import { useRouter } from 'next/router'
 
-const Home = () => {
-  const { scores, error } = useScores()
-
+export default function Golfer() {
+  const router = useRouter()
+  const { id } = router.query
+  const { scores, error } = useScoresOfGolfer(id)
+  
   return (
-    <Layout home>
+    <Layout>
       <>
         {error ? (
           error
@@ -30,5 +33,3 @@ const Home = () => {
     </Layout>
   )
 }
-
-export default Home

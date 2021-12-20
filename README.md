@@ -15,6 +15,7 @@ This is the code for the Golfr app frontend.
     ```
 6. Start the frontend server `yarn dev -p 3001`
 7. Visit http://localhost:3001
+8. You can login using any of the accounts in the backend `seeds` file
 
 ## Development
 <!-- 

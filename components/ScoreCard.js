@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import useScoreDelete from '../lib/useScoreDelete'
 import { getUserId } from '../lib/userAuth'
+import Link from 'next/link'
 
 const CONFIRM_MESSAGE = 'Are you sure you want to delete the score?'
 
@@ -14,7 +15,10 @@ const ScoreCard = ({ id, playedAt, totalScore, userId, userName }) => {
           {playedAt}
         </div>
         <div>
-          {`${userName} posted a score of ${totalScore}`}
+          <a className='text-blue-500 hover:text-blue-300'>
+            <Link href={`/golfers/${userId}`}>{userName}</Link>
+          </a>
+          {` posted a score of ${totalScore}`}
         </div>
       </div>
       <div className="w-1/6">

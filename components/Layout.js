@@ -5,7 +5,7 @@ import { getUsername } from '../lib/userAuth'
 const Layout = ({ children }) => {
   const [ username, setUsername ] = useState('')
   useEffect(() => setUsername(getUsername()), [])
-  var x = 1;
+  var x = 1
   console.log(x);
   return (
     <>

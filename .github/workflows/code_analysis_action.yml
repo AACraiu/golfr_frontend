@@ -1,0 +1,15 @@
+name: Code Analysis
+on: pull_request
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install yarn
+        run: npm install -g yarn
+      - name: Install modules
+        run: yarn install
+      - name: Run eslint on changed files
+        uses: tj-actions/eslint-changed-files@v8.4

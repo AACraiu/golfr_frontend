@@ -5,8 +5,7 @@ import { getUsername } from '../lib/userAuth'
 const Layout = ({ children }) => {
   const [ username, setUsername ] = useState('')
   useEffect(() => setUsername(getUsername()), [])
-  var x = 1
-  console.log(x);
+
   return (
     <>
       <header className="flex flex-row w-full px-10 py-2 shadow">

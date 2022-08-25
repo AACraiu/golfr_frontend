@@ -19,6 +19,7 @@ const Home = () => {
                 key={score.id}
                 id={score.id}
                 totalScore={score.total_score}
+                numberOfHoles={score.number_of_holes}
                 playedAt={score.played_at}
                 userId={score.user_id}
                 userName={score.user_name}

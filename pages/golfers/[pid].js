@@ -1,8 +1,6 @@
-// Create a golfer page
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-// Create a Golfer component
-// before it renders, it will fetch the golfer data
+
 const Golfer = () => {
   const router = useRouter()
   const { pid } = router.query
@@ -40,7 +38,6 @@ const Golfer = () => {
           <div>
             <h1 className="text-2xl font-bold">{state.user.name} 🏌🏻‍♂️</h1>
             <p className="text-lg">{state.user.email}</p>
-            {/* show the scores and */}
             <h2 className="text-xl font-bold">Scores</h2>
             <ul>
               {state.user.scores.map((score) => (

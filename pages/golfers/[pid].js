@@ -1,34 +1,34 @@
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 
 const Golfer = () => {
   const router = useRouter()
   const { pid } = router.query
-  const [state, setState] = useState({
+  const [ state, setState ] = useState({
     user: null,
     loading: true,
-  });
+  })
 
   useEffect(() => {
     if (pid) {
       fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/${pid}`)
-        .then((res) => res.json())
-        .then((data) => {
+        .then(res => res.json())
+        .then(data => {
           if (data.errors) {
-            setState({loading: false})
+            setState({ loading: false })
             alert(data.errors[0])
           } else {
             setState({
               user: data.user,
               loading: false,
-            });
+            })
           }
         })
-        .catch((e) => {
-          alert(e);
-        });
+        .catch(e => {
+          alert(e)
+        })
     }
-  }, [pid]);
+  }, [ pid ])
 
   return (
     <div className="flex flex-row h-screen items-center justify-center">
@@ -40,7 +40,7 @@ const Golfer = () => {
             <p className="text-lg">{state.user.email}</p>
             <h2 className="text-xl font-bold">Scores</h2>
             <ul>
-              {state.user.scores.map((score) => (
+              {state.user.scores.map(score => (
                 <li key={score.id} className="text-lg">
                   {score.total_score} - {score.played_at}
                 </li>
@@ -50,7 +50,7 @@ const Golfer = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Golfer;
+export default Golfer

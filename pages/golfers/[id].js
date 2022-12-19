@@ -1,14 +1,13 @@
-import { useState, useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { setUserData } from '../../lib/userAuth'
-import { getUsername } from '../../lib/userAuth'
 import Layout from '../../components/Layout'
 import ScorePostWidget from '../../components/ScorePostWidget'
 import ScoreCard from '../../components/ScoreCard'
 import useIndividualScores from '../../lib/useIndividualScore'
 
 const UserScore = () => {
-  const { scores, error } = useIndividualScores()
+  const router = useRouter()
+  const { id } = router.query
+  const { scores, error } = useIndividualScores(id)
   return (
     <Layout>
       <>

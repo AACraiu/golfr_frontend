@@ -14,9 +14,6 @@ const Layout = ({ children }) => {
           <Link href={'/'}>
             <a className="underline text-blue-700">Home</a>
           </Link>
-          <Link href={'/golfers/' + username}>
-            <a className="underline text-blue-700">My Scores</a>
-          </Link>
         </span>
         <span className="h-8 items-center text-xl ml-auto">
           {username}

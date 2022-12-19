@@ -7,9 +7,18 @@ import useIndividualScores from '../../lib/useIndividualScore'
 const UserScore = () => {
   const router = useRouter()
   const { id } = router.query
-  const { scores, error } = useIndividualScores(id)
+  const { golferData, error } = useIndividualScores(id)
+  let scores = null
+  let playerName = null
+
+  if ( golferData ){
+    scores = golferData.scores
+    playerName = golferData.playerName
+  }
+
   return (
     <Layout>
+      <h1>{playerName}</h1>
       <>
         {error ? (
           error
@@ -29,6 +38,7 @@ const UserScore = () => {
           </>
         )}
       </>
+
     </Layout>
   )
 

@@ -1,17 +1,25 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { getUsername } from '../lib/userAuth'
+import { getUserId, getUsername } from '../lib/userAuth'
 
 const Layout = ({ children }) => {
   const [ username, setUsername ] = useState('')
+  const [ id, setUserId ] = useState('')
   useEffect(() => setUsername(getUsername()), [])
+  useEffect(() => setUserId(getUserId()), [])
+  
 
   return (
     <>
       <header className="flex flex-row w-full px-10 py-2 shadow">
         <span className="h-8 items-center space-x-6">
           <span className="text-2xl">Golfr 🏌️</span>
-          <span className="text-xl">Home</span>
+          <Link href={'/'}>
+            <span className="text-xl">Home</span>
+          </Link>
+          <Link href={`/golfers/${id}`}>
+          <span className="text-xl"> Scores </span>
+        </Link>
         </span>
         <span className="h-8 items-center text-xl ml-auto">
           {username}

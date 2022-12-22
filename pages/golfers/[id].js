@@ -1,16 +1,24 @@
-import { useState, useCallback } from 'react'
 import { useRouter } from 'next/router'
-import { setUserData } from '../../lib/userAuth'
-import { getUsername } from '../../lib/userAuth'
 import Layout from '../../components/Layout'
 import ScorePostWidget from '../../components/ScorePostWidget'
 import ScoreCard from '../../components/ScoreCard'
 import useIndividualScores from '../../lib/useIndividualScore'
 
 const UserScore = () => {
-  const { scores, error } = useIndividualScores()
+  const router = useRouter()
+  const { id } = router.query
+  const { golferData, error } = useIndividualScores(id)
+  let scores = null
+  let playerName = null
+
+  if ( golferData ){
+    scores = golferData.scores
+    playerName = golferData.playerName
+  }
+
   return (
     <Layout>
+      <h1>{playerName}</h1>
       <>
         {error ? (
           error
@@ -30,6 +38,7 @@ const UserScore = () => {
           </>
         )}
       </>
+
     </Layout>
   )
 

@@ -56,7 +56,7 @@ const Login = () => {
 
           <div>
             <label htmlFor="password" className="font-bold">
-              Password 312312
+              Password
             </label>
             <div>
               <input
